@@ -73,9 +73,11 @@ describe("Launches API",()=>{
            test("It should catch Invalid Dates",async ()=>{
             const response=await request(app).post("/v1/launches")
             .send(lauchDataWithInvalidDate).expect("Content-Type",/json/)
-            .expect(400).expect(response.body).toStrictEqual({
-                error:"Invalid launch date"
-             })
+            .expect(400)
+
+            expect(response.body).toStrictEqual({
+                error: 'Invalid launch date',
+              });
            })
         
         // test("It should catch Invalid Dates", ()=>{})
