@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - name: use Node.js version16 ${{matrix.node-version}}
+            - name: use Node.js version16
               uses: actions/setup-node@v4
               with: 
                 node-version: 18
